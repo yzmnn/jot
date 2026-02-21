@@ -1,0 +1,64 @@
+[tool.poetry]
+name = "jot"
+version = "0.1.0"
+description = "Personal AI assistant with persistent memory and knowledge graph"
+authors = ["Yasmine <yasmine@example.com>"]
+readme = "README.md"
+packages = [{include = "jot", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+# Core
+neo4j = "^5.14.0"
+langchain = "^0.1.0"
+langchain-community = "^0.0.13"
+langchain-anthropic = "^0.1.0"
+chromadb = "^0.4.18"
+anthropic = "^0.8.0"
+
+# Document Processing
+python-frontmatter = "^1.0.0"
+markdown-it-py = "^3.0.0"
+pyyaml = "^6.0"
+
+# Embeddings (local, free)
+sentence-transformers = "^2.2.2"
+
+# CLI
+typer = "^0.9.0"
+rich = "^13.7.0"
+prompt-toolkit = "^3.0.43"
+
+# Utils
+pydantic = "^2.5.0"
+python-dotenv = "^1.0.0"
+watchdog = "^3.0.0"
+tenacity = "^8.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.12.0"
+ruff = "^0.1.0"
+mypy = "^1.7.0"
+
+[tool.poetry.scripts]
+jot = "jot.cli.main:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
