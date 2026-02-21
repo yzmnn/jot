@@ -1,8 +1,6 @@
 [tool.poetry]
 name = "jot"
 version = "0.1.0"
-description = "Personal AI assistant with persistent memory and knowledge graph"
-authors = ["Yasmine <yasmine@example.com>"]
 readme = "README.md"
 packages = [{include = "jot", from = "src"}]
 
@@ -22,7 +20,7 @@ python-frontmatter = "^1.0.0"
 markdown-it-py = "^3.0.0"
 pyyaml = "^6.0"
 
-# Embeddings (local, free)
+# Embeddings (local option)
 sentence-transformers = "^2.2.2"
 
 # CLI
